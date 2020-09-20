@@ -3062,7 +3062,7 @@ if (PhotonNetwork.PhotonServerSettings == null) return;
             }
 
             // find out if ServerSettings can be instantiated (existing script check)
-            ScriptableObject serverSettingTest = ScriptableObject.CreateInstance("ServerSettings");
+            ScriptableObject serverSettingTest = ScriptableObject.CreateInstance("Photon.Pun.ServerSettings");
             if (serverSettingTest == null)
             {
                 Debug.LogError("missing settings script");
@@ -3087,7 +3087,7 @@ if (PhotonNetwork.PhotonServerSettings == null) return;
                     AssetDatabase.ImportAsset(settingsPath);
                 }
 
-                PhotonNetwork.PhotonServerSettings = (ServerSettings)ScriptableObject.CreateInstance("ServerSettings");
+                PhotonNetwork.PhotonServerSettings = (ServerSettings)ScriptableObject.CreateInstance("Photon.Pun.ServerSettings");
                 if (PhotonNetwork.PhotonServerSettings != null)
                 {
                     AssetDatabase.CreateAsset(PhotonNetwork.PhotonServerSettings, serverSettingsAssetPath);
